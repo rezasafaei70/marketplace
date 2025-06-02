@@ -1,0 +1,235 @@
+# requirements.txt
+
+# Django Core
+Django==4.2.7
+djangorestframework==3.14.0
+
+# Database
+psycopg2-binary==2.9.9
+
+# Authentication & Authorization
+djangorestframework-simplejwt==5.3.0
+djoser==2.2.0
+
+# Configuration Management
+python-decouple==3.8
+
+# CORS Headers
+django-cors-headers==4.3.1
+
+# Filtering
+django-filter==23.3
+
+# Redis & Caching
+redis==5.0.1
+django-redis==5.4.0
+
+# Celery (Background Tasks)
+celery==5.3.4
+django-celery-beat==2.5.0
+django-celery-results==2.5.0
+
+# File Storage (AWS S3)
+boto3==1.34.0
+django-storages==1.14.2
+
+# Image Processing
+Pillow==10.1.0
+
+# HTTP Requests
+requests==2.31.0
+
+# SMS Service (Kavenegar)
+kavenegar==1.1.2
+
+# Payment Gateways
+zeep==4.2.1
+
+# Utilities
+python-slugify==8.0.1
+jdatetime==4.1.0
+
+# Development & Debugging
+django-debug-toolbar==4.2.0
+django-extensions==3.2.3
+
+# API Documentation
+drf-spectacular==0.26.5
+
+# Validation
+phonenumbers==8.13.25
+django-phonenumber-field==7.2.0
+
+# Security
+cryptography==41.0.7
+
+# Excel Export (برای گزارش‌گیری)
+openpyxl==3.1.2
+xlsxwriter==3.1.9
+
+# PDF Generation
+reportlab==4.0.7
+
+# QR Code Generation
+qrcode==7.4.2
+
+# Monitoring (اختیاری)
+sentry-sdk==1.38.0
+
+# Testing
+factory-boy==3.3.0
+faker==20.1.0
+
+# Code Quality
+flake8==6.1.0
+black==23.11.0
+isort==5.12.0
+
+# Environment
+python-dotenv==1.0.0
+
+# Timezone
+pytz==2023.3
+
+# JSON Web Token
+PyJWT==2.8.0
+
+# UUID
+shortuuid==1.0.11
+
+# Markdown (برای محتوا)
+markdown==3.5.1
+
+# Template Engine
+jinja2==3.1.2
+
+# Web Server (برای production)
+gunicorn==21.2.0
+whitenoise==6.6.0
+
+# Database Migrations
+django-migration-zero==0.1.1
+
+# Admin Interface Enhancement
+django-admin-interface==0.26.1
+django-colorfield==0.10.1
+
+# File Upload
+django-cleanup==8.0.0
+
+# Logging
+django-log-viewer==1.1.7
+
+# Rate Limiting
+django-ratelimit==4.1.0
+
+# Health Check
+django-health-check==3.17.0
+
+# Backup
+django-dbbackup==4.0.2
+
+# Search
+django-haystack==3.2.1
+elasticsearch==8.11.0
+
+# Social Authentication (اختیاری)
+social-auth-app-django==5.4.0
+
+# Thumbnail Generation
+easy-thumbnails==2.8.5
+
+# Rich Text Editor
+django-ckeditor==6.7.0
+
+# Sitemap
+django-sitemap==2.3
+
+# RSS Feed
+feedparser==6.0.10
+
+# Data Export
+django-import-export==3.3.1
+
+# Compression
+django-compressor==4.4
+
+# CAPTCHA
+django-simple-captcha==0.5.20
+
+# Two-Factor Authentication
+django-otp==1.2.2
+
+# WebSocket Support (اختیاری)
+channels==4.0.0
+channels-redis==4.1.0
+
+# Task Queue UI (اختیاری)
+flower==2.0.1
+
+# Development Server
+django-livereload-server==0.4
+
+# API Throttling
+django-rest-framework-throttling==0.1.1
+
+# Permissions
+django-guardian==2.4.0
+
+# Versioning
+django-reversion==5.0.8
+
+# Tagging
+django-taggit==4.0.0
+
+# Comments
+django-contrib-comments==2.2.0
+
+# Notifications
+django-notifications-hq==1.8.3
+
+# Activity Stream
+django-activity-stream==2.0.0
+
+# Audit Trail
+django-auditlog==2.2.2
+
+# Multi-tenant (اختیاری)
+django-tenant-schemas==1.10.0
+
+# GraphQL (اختیاری)
+graphene-django==3.1.5
+
+# WebP Support
+webptools==0.0.9
+
+# Language Detection
+langdetect==1.0.9
+
+# URL Shortener
+pyshorteners==1.0.1
+
+# Barcode Generation
+python-barcode==0.15.1
+
+# Currency Conversion
+forex-python==1.8
+
+# Math Calculations
+numpy==1.24.4
+
+# Data Analysis (برای analytics)
+pandas==2.1.3
+
+# Charts & Graphs
+matplotlib==3.8.2
+seaborn==0.13.0
+
+# Machine Learning (برای recommendation)
+scikit-learn==1.3.2
+
+# Natural Language Processing
+hazm==0.7.0
+
+# Persian Date/Time
+persiantools==4.0.0
