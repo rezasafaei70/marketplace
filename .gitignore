@@ -1,229 +1,89 @@
-بله، حالا فایل .env مطابق با تنظیمات settings.py شما ارائه می‌دهم:
+# Created by https://www.gitignore.io
 
-        
-        ini
-        
-    
-  
-      # .env
-
-# Django Core Settings
-SECRET_KEY=django-insecure-your-very-long-secret-key-here-change-this-in-production
-DEBUG=True
-ALLOWED_HOSTS=localhost,127.0.0.1,0.0.0.0
-
-# Database Configuration (PostgreSQL)
-DB_NAME=online_shop_db
-DB_USER=postgres
-DB_PASSWORD=your_postgres_password
-DB_HOST=localhost
-DB_PORT=5432
-
-# Redis Configuration
-REDIS_URL=redis://localhost:6379/0
-
-# AWS S3 Configuration
-AWS_ACCESS_KEY_ID=your_aws_access_key_id
-AWS_SECRET_ACCESS_KEY=your_aws_secret_access_key
-AWS_STORAGE_BUCKET_NAME=your-s3-bucket-name
-AWS_S3_REGION_NAME=us-east-1
-
-# CORS Settings
-CORS_ALLOWED_ORIGINS=http://localhost:3000,http://127.0.0.1:3000,http://localhost:3001
-
-# SMS Configuration (Kavenegar)
-SMS_API_KEY=your_kavenegar_api_key
-SMS_SENDER=10008663
-SMS_OTP_TEMPLATE=verify
-
-# Payment Gateway - ZarinPal
-ZARINPAL_MERCHANT=your_zarinpal_merchant_id
-ZARINPAL_CALLBACK_URL=http://localhost:8000/api/payments/zarinpal/callback/
-
-# Payment Gateway - Pay.ir
-PAYIR_API_KEY=your_payir_api_key
-PAYIR_CALLBACK_URL=http://localhost:8000/api/payments/payir/callback/
-
-# Email Configuration (برای production)
-EMAIL_HOST=smtp.gmail.com
-EMAIL_PORT=587
-EMAIL_USE_TLS=True
-EMAIL_HOST_USER=your_email@gmail.com
-EMAIL_HOST_PASSWORD=your_email_password
-
-# Logging
-LOG_LEVEL=INFO
-LOG_FILE_PATH=logs/django.log
-
-# Security Settings (برای production)
-SECURE_SSL_REDIRECT=False
-SECURE_HSTS_SECONDS=0
-SECURE_HSTS_INCLUDE_SUBDOMAINS=False
-SECURE_HSTS_PRELOAD=False
-
-# Social Authentication (اختیاری)
-GOOGLE_OAUTH2_KEY=your_google_oauth2_key
-GOOGLE_OAUTH2_SECRET=your_google_oauth2_secret
-
-# Monitoring & Analytics (اختیاری)
-SENTRY_DSN=your_sentry_dsn_url
-
-# File Upload Settings
-MAX_UPLOAD_SIZE=5242880
-ALLOWED_IMAGE_EXTENSIONS=jpg,jpeg,png,gif,webp
-ALLOWED_FILE_EXTENSIONS=pdf,doc,docx,txt
-
-# Rate Limiting
-RATE_LIMIT_ENABLE=True
-RATE_LIMIT_PER_MINUTE=60
-
-# Cache Settings
-CACHE_TTL=300
-CACHE_KEY_PREFIX=shop_
-
-# Backup Settings
-BACKUP_ENABLED=True
-BACKUP_SCHEDULE=0 2 * * *
-
-# Development/Production Flag
-ENVIRONMENT=development
-    
-    
-  
-  
-فایل .env.example (برای نمونه):
-
-        
-        ini
-        
-    
-  
-      # .env.example
-
-# Django Core Settings
-SECRET_KEY=your-secret-key-here
-DEBUG=True
-ALLOWED_HOSTS=localhost,127.0.0.1
-
-# Database Configuration
-DB_NAME=your_database_name
-DB_USER=your_database_user
-DB_PASSWORD=your_database_password
-DB_HOST=localhost
-DB_PORT=5432
-
-# Redis Configuration
-REDIS_URL=redis://localhost:6379/0
-
-# AWS S3 Configuration
-AWS_ACCESS_KEY_ID=your_aws_access_key
-AWS_SECRET_ACCESS_KEY=your_aws_secret_key
-AWS_STORAGE_BUCKET_NAME=your_bucket_name
-AWS_S3_REGION_NAME=your_region
-
-# CORS Settings
-CORS_ALLOWED_ORIGINS=http://localhost:3000
-
-# SMS Configuration
-SMS_API_KEY=your_sms_api_key
-SMS_SENDER=your_sms_sender
-SMS_OTP_TEMPLATE=your_template_name
-
-# Payment Gateways
-ZARINPAL_MERCHANT=your_zarinpal_merchant
-ZARINPAL_CALLBACK_URL=your_callback_url
-PAYIR_API_KEY=your_payir_api_key
-PAYIR_CALLBACK_URL=your_payir_callback_url
-    
-    
-  
-  
-نصب پکیج python-decouple:
-
-        
-        bash
-        
-    
-  
-      pip install python-decouple
-    
-    
-  
-  
-نکات مهم:
-
-
-امنیت: هرگز فایل .env را در git commit نکنید
-
-SECRET_KEY: برای production حتماً یک کلید قوی تولید کنید
-
-Database: اگر از PostgreSQL استفاده می‌کنید، کامنت SQLite را بردارید
-
-AWS S3: اگر از فایل‌های محلی استفاده می‌کنید، تنظیمات S3 را غیرفعال کنید
-
-Payment: کلیدهای درگاه پرداخت را از سایت‌های مربوطه دریافت کنید
-
-
-اضافه کردن به .gitignore:
-
-        
-        nix
-        
-    
-  
-      # .gitignore
-
-# Environment variables
-.env
-.env.local
-.env.production
-
-# Database
-*.sqlite3
-db.sqlite3
-
-# Media files
-media/
-uploads/
-
-# Static files
-staticfiles/
-static/
-
-# Logs
-logs/
-*.log
-
-# Cache
-__pycache__/
-*.pyc
-*.pyo
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS
+### OSX ###
 .DS_Store
-Thumbs.db
+.AppleDouble
+.LSOverride
 
-# Virtual environment
-venv/
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
 env/
-.venv/
-
-# Node modules (برای فرانت‌اند)
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Build files
 build/
+develop-eggs/
 dist/
-    
-    
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+# Translations
+*.mo
+*.pot
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
 
 
+### Django ###
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+
+.env
+db.sqlite3
