@@ -16,7 +16,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     # Third party apps
     'rest_framework',
     'corsheaders',
@@ -25,7 +25,8 @@ INSTALLED_APPS = [
     'storages',
     'django_celery_beat',
     'django_celery_results',
-    
+    'drf_spectacular',
+
     # Local apps
     'apps.accounts',
     'apps.products',
@@ -60,7 +61,7 @@ ROOT_URLCONF = 'handcraft_marketplace.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -90,10 +91,9 @@ WSGI_APPLICATION = 'handcraft_marketplace.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR +'/'+ 'db.sqlite3',
+        'NAME': BASE_DIR + '/' + 'db.sqlite3',
     }
 }
-
 
 # Redis and Caching
 CACHES = {
@@ -144,8 +144,27 @@ REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': (
         'django_filters.rest_framework.DjangoFilterBackend',
     ),
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     'DEFAULT_PAGINATION_CLASS': 'apps.common.pagination.StandardResultsSetPagination',
     'PAGE_SIZE': 20,
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Your Project API',
+    'DESCRIPTION': 'API documentation for Your Project',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,  # Optional: hides raw schema endpoint in UI
+    # Optional: Add contact info
+    'CONTACT': {
+        'name': 'Your Name',
+        'email': 'you@example.com',
+    },
+    # Optional: Add license
+    'LICENSE': {
+        'name': 'MIT License',
+    },
+    # Optional: Group endpoints by tags
+    'SCHEMA_PATH_PREFIX': r'/api/',  # Helps with tag grouping
 }
 
 # JWT Settings
@@ -159,7 +178,7 @@ SIMPLE_JWT = {
 }
 
 # CORS settings
-CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = config('CORS_ALLOWED_ORIGINS', cast=Csv())
 
 # Internationalization
@@ -170,8 +189,14 @@ USE_L10N = True
 USE_TZ = True
 
 # Static files
+# Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# مسیر فایل‌های static در حالت توسعه
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+# مسیر جمع‌آوری فایل‌های static در حالت تولید
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  #
 
 # Media files
 MEDIA_URL = '/media/'
@@ -204,3 +229,7 @@ X_FRAME_OPTIONS = 'DENY'
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+ADMIN_SITE_HEADER = "پنل مدیریت سیستم"
+ADMIN_SITE_TITLE = "مدیریت"
+ADMIN_INDEX_TITLE = "خوش آمدید به پنل مدیریت"
